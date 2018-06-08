@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/rutodeno/webScrapper/issues"
   },
-  "homepage": "https://github.com/rutodeno/webScrapper#readme"
+  "homepage": "https://github.com/rutodeno/webScrapper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.4",
+    "morgan": "^1.9.0",
+    "npm": "^6.1.0"
+  },
+  "devDependencies": {}
 }
