@@ -1,0 +1,20 @@
+{
+  "name": "webscrapper",
+  "version": "1.0.0",
+  "description": "Scrapping Websites and saving the to MongoDB. ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rutodeno/webScrapper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rutodeno/webScrapper/issues"
+  },
+  "homepage": "https://github.com/rutodeno/webScrapper#readme"
+}
