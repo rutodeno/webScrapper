@@ -18,7 +18,7 @@ app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/webScrapper");
 
-app.get("/scappings", function(req,res) {
+app.get("/scrappings", function(req,res) {
     axios.get("http://www.echojs.com/").then(function(response) {
         var $ = cheerio.load(response.data);
         
@@ -27,7 +27,7 @@ app.get("/scappings", function(req,res) {
 
             result.title = $(this)
                 .children("a")
-                .attr("href");
+                .text();
             result.link = $(this)
                 .children("a")
                 .attr("href");

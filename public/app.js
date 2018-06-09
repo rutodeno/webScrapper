@@ -5,23 +5,25 @@ $.getJSON("/articles", function(data) {
 });
 
 $(document).on("click", "p", function() {
-    $("#notes").empty();
+    $("#notes").empty(  );
 
     var thisId = $(this).attr("data-id");
 
     $.ajax({
         method: "GET",
-        url: "/articles" + thisId
+        url: "/articles/" + thisId
     })
     .then(function(data) {
         console.log(data);
         $("#notes").append("<h2>" +data[0].title + "</h2>");
         $("#notes").append("<input id='titleinput' name='title' >");
         $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
-        $("#notes").append("<button data-id='" + data._id +
-        +"' id='savenote'>Save Note</button>");
+        $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
         if(data.note) {
+
+            console.log(data.note);
+
             $("#titleinput").val(data.note.title);
             $("#bodyinput").val(data.note.body);
         }
@@ -33,7 +35,7 @@ $(document).on("click", "#savenote", function() {
 
     $.ajax({
         method: "POST",
-        url: "/articles/" +thisId,
+        url: "/articles/" + thisId,
         data: {
             title: $("#titleinput").val(),
             body: $("#bodyinput").val()
@@ -41,7 +43,7 @@ $(document).on("click", "#savenote", function() {
     })
     .then(function(data) {
         console.log(data);
-        $("notes").empty();
+        $("#notes").empty();
     });
 
     $("#titleinput").val("");
